@@ -1,0 +1,7 @@
+{
+  "name": "UserPost",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
