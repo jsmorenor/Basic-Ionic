@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
 import { HeaderComponent } from '@shared/components/header/header.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { HeaderComponent } from '@shared/components/header/header.component';
   imports: [
     CommonModule,
     IonicModule,
+    ReactiveFormsModule,
   ],
   exports: [
     HeaderComponent

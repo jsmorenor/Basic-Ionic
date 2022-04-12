@@ -1,13 +1,34 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-title>
-            Social User
-          </ion-title>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-toolbar>
-</ion-header>
+  <ion-toolbar color="primary" >
+    <ion-buttons class="selectable" (click)="goBack()" *ngIf="title" slot="start"><ion-icon name="arrow-back"></ion-icon></ion-buttons>
+    <ion-title >
+      {{title ?? 'Social User'}}
+    </ion-title >
+    <ion-buttons slot="end" class="selectable" >
+      <ion-icon (click)="alterSearchView()" name="search" ></ion-icon >
+    </ion-buttons >
+  </ion-toolbar >
+  <ion-modal [isOpen]="canSearch" >
+    <ng-template >
+      <ion-toolbar color="secondary">
+        <ion-title>
+          Buscar usuarios
+        </ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="alterSearchView()">cerrar</ion-button>
+        </ion-buttons>
+      </ion-toolbar >
+      <ion-content>
+        <ion-toolbar>
+          <form [formGroup]="searcher">
+            <ion-searchbar formControlName="id" (search)="getUserAlbums()" placeholder="busca usuario por id" inputmode="numeric"></ion-searchbar>
+          </form>
+        </ion-toolbar>
+      </ion-content>
+        <ion-button (click)="getUserAlbums()">
+          <ion-icon name="search"></ion-icon>
+          Buscar
+        </ion-button>
+    </ng-template >
+  </ion-modal >
+</ion-header >

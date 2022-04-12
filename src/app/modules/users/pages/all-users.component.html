@@ -1,9 +1,9 @@
 <app-header ></app-header >
 <ion-content [fullscreen]="true" >
   <ion-item-group>
-    <ion-item *ngFor="let user of users">
+    <ion-item *ngFor="let user of users$ | async">
       <ion-card-header>
-        <ion-card-title><a class="link" [routerLink]="['/' , 'users', user.id]">{{user.username}}</a></ion-card-title>
+        <ion-card-title><a class="link" [routerLink]="['/' , 'users', user.id, 'albums']">{{user.username}}</a></ion-card-title>
         <ion-card-subtitle>{{user.name}}</ion-card-subtitle>
         <ion-card-content><p>Teléfono: {{ user.phone }}</p></ion-card-content>
       </ion-card-header>

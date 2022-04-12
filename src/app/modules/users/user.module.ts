@@ -7,6 +7,7 @@ import { AllUsersComponent } from '@modules/users/pages/all-users.component';
 import { IonicModule } from '@ionic/angular';
 import { UserService } from '@modules/users/services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     UserRoutingModule,
     IonicModule,
     HttpClientModule,
+    RouterModule,
   ],
   providers: [ UserService ],
 })

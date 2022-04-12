@@ -1,0 +1,16 @@
+<app-header [title]="isUserFound? username || 'Error': username" ></app-header >
+<ion-content >
+  <ion-list *ngIf="username && isUserFound; else error" >
+    <ion-item *ngFor="let album of albums$ | async" >
+      {{album.title}}
+    </ion-item >
+  </ion-list >
+</ion-content >
+
+<ng-template #error >
+  <ion-card>
+    <ion-card-title>No se pudo encontrar al usuario</ion-card-title>
+  </ion-card>
+</ng-template >
+
+
