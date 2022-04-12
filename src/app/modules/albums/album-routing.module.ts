@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AlbumComponent } from '@modules/albums/pages/album.component';
 
 const routes: Routes = [
-  {path: 'albums', component: AlbumComponent}
+  {path: '', component: AlbumComponent}
 ];
 
 @NgModule({

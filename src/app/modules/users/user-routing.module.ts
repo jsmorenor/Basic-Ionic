@@ -5,7 +5,8 @@ import { AllUsersComponent } from '@modules/users/pages/all-users.component';
 const routes: Routes = [
   { path: '', component: AllUsersComponent },
   { path: 'users/:id', children: [
-      { path: '', loadChildren: () => import('@modules/albums/album.module').then((m) => m.AlbumModule ) }
+      { path: 'albums', loadChildren: () => import('@modules/albums/album.module').then((m) => m.AlbumModule ) },
+      { path: 'post', loadChildren: () => import('@modules/albums/album.module').then((m) => m.AlbumModule ) },
     ] },
 ];
 
