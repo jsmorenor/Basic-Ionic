@@ -1,6 +1,9 @@
-<app-header [title]="isUserFound? username || 'Error': username" ></app-header >
+<app-header [title]="isUserFound? username?.username || 'Error': username?.username" ></app-header >
 <ion-content >
   <ion-list *ngIf="username && isUserFound; else error" >
+    <ion-list-header color="tertiary" >
+      <ion-label >Álbumes de {{ username.name }}</ion-label >
+    </ion-list-header >
     <ion-item *ngFor="let album of albums$ | async" >
       {{album.title}}
     </ion-item >
@@ -8,9 +11,17 @@
 </ion-content >
 
 <ng-template #error >
-  <ion-card>
-    <ion-card-title>No se pudo encontrar al usuario</ion-card-title>
-  </ion-card>
+  <div class="d-f" >
+    <ion-card *ngIf="isUserFound; else loadIcon" class="bgc-t" >
+      <ion-card-title >{{errorMessage}}</ion-card-title >
+    </ion-card >
+  </div >
+</ng-template >
+
+<ng-template #loadIcon >
+  <ion-card class="bgc-t scale-2">
+    <ion-spinner color="tertiary" ></ion-spinner >
+  </ion-card >
 </ng-template >
 
 

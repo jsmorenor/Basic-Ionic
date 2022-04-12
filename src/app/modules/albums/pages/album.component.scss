@@ -1,0 +1,20 @@
+.d-f {
+  position : fixed;
+  top : 50%;
+  left : 50%;
+  transform: translate(-50%, -50%);
+}
+
+.square {
+  width: 10vh;
+  height: 10vh;
+  background-color : red;
+}
+
+.scale-2 {
+  transform: scale(2);
+}
+
+.bgc-t {
+  background-color : transparent;
+}
