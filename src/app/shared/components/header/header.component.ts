@@ -9,10 +9,4 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-
-  public alterSearchView() {
-  }
-
-  public searchNone(value: string): void {
-  }
 }
