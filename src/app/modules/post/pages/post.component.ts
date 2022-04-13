@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '@modules/post/services/post.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,12 +10,17 @@ import { Observable } from 'rxjs';
 })
 export class PostComponent implements OnInit {
   public post$?: Observable<any>;
+  public userId!: string | number;
 
-  constructor(private postService: PostService, private activatedRoute: ActivatedRoute) { }
+  constructor(private postService: PostService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    const { id } = this.activatedRoute.snapshot.params;
-    this.post$ = this.postService.getPost(id);
+    this.userId = this.activatedRoute.snapshot.params['id'];
+    this.post$ = this.postService.getPost(this.userId);
+  }
+
+  public changePage(page: string): void {
+    this.router.navigate([ '/', 'users', this.userId, page ]).then();
   }
 
 }

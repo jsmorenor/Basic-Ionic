@@ -1,5 +1,17 @@
 <app-header [title]="isUserFound? username?.username || 'Error': username?.username" ></app-header >
 <ion-content >
+  <ion-toolbar >
+    <ion-grid >
+      <ion-row >
+        <ion-col >
+          <ion-button class="expand" >Álbumes</ion-button >
+        </ion-col >
+        <ion-col >
+          <ion-button color="light" class="expand" >Publicaciones</ion-button >
+        </ion-col >
+      </ion-row >
+    </ion-grid >
+  </ion-toolbar >
   <ion-list *ngIf="username && isUserFound; else error" >
     <ion-list-header color="tertiary" >
       <ion-label >Álbumes de {{ username.name }}</ion-label >
@@ -19,7 +31,7 @@
 </ng-template >
 
 <ng-template #loadIcon >
-  <ion-card class="bgc-t scale-2">
+  <ion-card class="bgc-t scale-2" >
     <ion-spinner color="tertiary" ></ion-spinner >
   </ion-card >
 </ng-template >

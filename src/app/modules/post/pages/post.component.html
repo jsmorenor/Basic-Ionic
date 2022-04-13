@@ -1,6 +1,18 @@
 <app-header title="Some Name" ></app-header >
 
 <ion-content >
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="changePage('albums')" color="light" class="expand">Álbumes</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="changePage('post')" class="expand">Publicaciones</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
   <ion-list >
     <ion-list-header >
       <ion-label ><h2 >Publicaciones de {{'Some Name'}}</h2 ></ion-label >
@@ -11,6 +23,9 @@
           <h3 >{{post.title}}</h3 >
           <p >{{post.body}}</p >
         </ion-label >
+        <ion-buttons>
+          <ion-icon name="eye"></ion-icon>
+        </ion-buttons>
       </ion-item >
     </ion-item-group >
   </ion-list >
