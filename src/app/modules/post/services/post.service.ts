@@ -13,12 +13,20 @@ export class PostService {
 
   constructor(private httpService: HttpClient) { }
 
-  public getPost(userId: string | number): Observable<Post[]> {
+  public getPosts(userId: string | number): Observable<Post[]> {
     return this.httpService
       .get(`${ this.url }users/${ userId }/posts`)
       .pipe(
         map(data => data as Post[]),
         catchError(() => of([])),
+      );
+  }
+
+  public getPost(id: string | number): Observable<Post | undefined> {
+    return this.httpService.get(`${ this.url }posts/${ id }`)
+      .pipe(
+        map(data => data as Post),
+        catchError(() => of(undefined)),
       );
   }
 }

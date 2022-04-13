@@ -1,0 +1,8 @@
+<ng-container *ngIf="post$ | async" >
+  <ion-card >
+    <ion-card-header >
+      <ion-card-title >{{(post$ | async)?.title}}</ion-card-title >
+    </ion-card-header >
+    <ion-card-content >{{(post$ | async)?.body}}</ion-card-content >
+  </ion-card >
+</ng-container >

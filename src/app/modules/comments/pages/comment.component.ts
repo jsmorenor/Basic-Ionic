@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommentService } from '@modules/comments/services/comment.service';
 import { Observable } from 'rxjs';
+import { Comment } from '@core/models/comment';
 
 @Component({
   selector: 'app-comment',

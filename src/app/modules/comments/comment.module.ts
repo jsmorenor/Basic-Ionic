@@ -8,10 +8,13 @@ import { CommentService } from '@modules/comments/services/comment.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { HeaderModule } from '@modules/header/header.module';
+import { PostModule } from '@modules/post/post.module';
+import { CommentCardComponent } from '@modules/comments/components/comment-card/comment-card.component';
+import { CommentTitleComponent } from '@modules/comments/components/comment-title/comment-title.component';
 
 
 @NgModule({
-  declarations: [ CommentComponent ],
+  declarations: [ CommentComponent, CommentCardComponent, CommentTitleComponent ],
   imports: [
     CommonModule,
     CommentRoutingModule,
@@ -19,6 +22,7 @@ import { HeaderModule } from '@modules/header/header.module';
     IonicModule,
     HttpClientModule,
     RouterModule,
+    PostModule,
   ],
   providers: [ CommentService ],
 })

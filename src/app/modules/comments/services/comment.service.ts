@@ -4,6 +4,8 @@ import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 
+import { Comment } from '@core/models/comment';
+
 @Injectable({
   providedIn: 'root',
 })

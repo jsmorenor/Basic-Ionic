@@ -17,7 +17,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     this.userId = this.activatedRoute.snapshot.params['id'];
-    this.post$ = this.postService.getPost(this.userId);
+    this.post$ = this.postService.getPosts(this.userId);
   }
 
   public changePage(page: string): void {

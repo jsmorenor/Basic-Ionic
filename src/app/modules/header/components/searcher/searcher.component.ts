@@ -31,7 +31,7 @@ export class SearcherComponent implements OnInit {
     const { id, page } = this.searcher.value;
     if (id && !isNaN(Number(id))) {
       this.canSearch = false;
-      setTimeout(() => this.router.navigate([ '/', 'users', id, page ]), 0);
+      setTimeout(() => this.router.navigate([ '/', 'users', id, page ]), 100);
     }
   }
 }

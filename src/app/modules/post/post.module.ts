@@ -9,9 +9,13 @@ import { PostComponent } from '@modules/post/pages/post.component';
 
 import { PostService } from '@modules/post/services/post.service';
 import { HeaderModule } from '@modules/header/header.module';
+import { PostCardComponent } from '@modules/post/components/post-card/post-card.component';
 
 @NgModule({
-  declarations: [ PostComponent ],
+  declarations: [
+    PostComponent,
+    PostCardComponent,
+  ],
   imports: [
     CommonModule,
     PostRoutingModule,
@@ -21,5 +25,8 @@ import { HeaderModule } from '@modules/header/header.module';
     IonicModule,
   ],
   providers: [ PostService ],
+  exports: [
+    PostCardComponent,
+  ],
 })
 export class PostModule {}
