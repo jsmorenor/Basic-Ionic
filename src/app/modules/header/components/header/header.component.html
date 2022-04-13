@@ -1,48 +1,14 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" >
   <ion-toolbar color="primary" >
-    <ion-buttons class="selectable" (click)="goBack()" *ngIf="title" slot="start" >
+    <ion-buttons (click)="goBack()" *ngIf="title" class="selectable" slot="start" >
       <ion-icon name="arrow-back" ></ion-icon >
     </ion-buttons >
     <ion-title >
       {{title ?? 'Social User'}}
     </ion-title >
-    <ion-buttons slot="end" class="selectable" >
+    <ion-buttons class="selectable" slot="end" >
       <ion-icon (click)="alterSearchView()" name="search" ></ion-icon >
     </ion-buttons >
+    <app-searcher [canSearch]="canSearch" ></app-searcher >
   </ion-toolbar >
-  <ion-modal [isOpen]="canSearch" >
-    <ng-template >
-      <ion-toolbar color="secondary" >
-        <ion-title >
-          Buscar usuarios
-        </ion-title >
-        <ion-buttons slot="end" >
-          <ion-button (click)="alterSearchView()" >cerrar</ion-button >
-        </ion-buttons >
-      </ion-toolbar >
-      <ion-content >
-        <ion-toolbar >
-          <form [formGroup]="searcher" >
-            <ion-searchbar formControlName="id" (search)="getUserAlbums()" placeholder="busca usuario por id"
-                           inputmode="numeric" ></ion-searchbar >
-            <ion-list >
-              <ion-radio-group formControlName="page" >
-                <ion-list-header >
-                  <ion-label >Elige lo que quieres ver</ion-label >
-                </ion-list-header >
-                <ion-item *ngFor="let value of pages" >
-                  <ion-label >{{value.name}}</ion-label >
-                  <ion-radio slot="start" [value]="value.address" ></ion-radio >
-                </ion-item >
-              </ion-radio-group >
-            </ion-list >
-          </form >
-        </ion-toolbar >
-      </ion-content >
-      <ion-button (click)="getUserAlbums()" >
-        <ion-icon name="search" ></ion-icon >
-        Buscar
-      </ion-button >
-    </ng-template >
-  </ion-modal >
 </ion-header >

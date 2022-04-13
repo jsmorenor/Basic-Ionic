@@ -1,0 +1,35 @@
+<ion-modal [isOpen]="canSearch" >
+  <ng-template >
+    <ion-toolbar color="secondary" >
+      <ion-title >
+        Buscar usuarios
+      </ion-title >
+      <ion-buttons slot="end" >
+        <ion-button (click)="alterSearchView()" >cerrar</ion-button >
+      </ion-buttons >
+    </ion-toolbar >
+    <ion-content >
+      <ion-toolbar >
+        <form [formGroup]="searcher" >
+          <ion-searchbar (search)="getUserAlbums()" formControlName="id" inputmode="numeric"
+                         placeholder="busca usuario por id" ></ion-searchbar >
+          <ion-list >
+            <ion-radio-group formControlName="page" >
+              <ion-list-header >
+                <ion-label >Elige lo que quieres ver</ion-label >
+              </ion-list-header >
+              <ion-item *ngFor="let value of pages" >
+                <ion-label >{{value.name}}</ion-label >
+                <ion-radio [value]="value.address" slot="start" ></ion-radio >
+              </ion-item >
+            </ion-radio-group >
+          </ion-list >
+        </form >
+      </ion-toolbar >
+    </ion-content >
+    <ion-button (click)="getUserAlbums()" >
+      <ion-icon name="search" ></ion-icon >
+      Buscar
+    </ion-button >
+  </ng-template >
+</ion-modal >
