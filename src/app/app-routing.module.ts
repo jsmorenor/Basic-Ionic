@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('@modules/users/user.module').then(module => module.UserModule) },
+  { path: 'post', loadChildren: () => import('@modules/comments/comment.module').then(module => module.CommentModule) },
 ];
 
 @NgModule({

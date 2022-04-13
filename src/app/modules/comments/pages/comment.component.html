@@ -1,0 +1,28 @@
+<app-header ></app-header >
+
+<ion-content >
+  <ion-card >
+    <ion-card-header >
+      <ion-card-title >Post Title</ion-card-title >
+    </ion-card-header >
+    <ion-card-content >Post Body</ion-card-content >
+  </ion-card >
+  <ion-list >
+    <ion-list-header >Comentarios</ion-list-header >
+    <ion-item-group >
+      <ion-item *ngFor="let comment of comments$ | async" >
+        <ion-card >
+          <ion-card-header >
+            <ion-label >
+              <h3 >{{comment.name}}</h3 >
+              <p >{{comment.email}}</p >
+            </ion-label >
+          </ion-card-header >
+          <ion-card-content >
+            <p >{{comment.body}}</p >
+          </ion-card-content >
+        </ion-card >
+      </ion-item >
+    </ion-item-group >
+  </ion-list >
+</ion-content >
