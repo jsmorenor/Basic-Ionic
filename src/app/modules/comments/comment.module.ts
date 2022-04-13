@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { CommentRoutingModule } from './comment-routing.module';
 import { CommentComponent } from '@modules/comments/pages/comment.component';
-import { SharedModule } from '@shared/shared.module';
 import { IonicModule } from '@ionic/angular';
 import { CommentService } from '@modules/comments/services/comment.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { HeaderModule } from '@modules/header/header.module';
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     CommentRoutingModule,
-    SharedModule,
+    HeaderModule,
     IonicModule,
     HttpClientModule,
     RouterModule,

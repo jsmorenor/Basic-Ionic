@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
-import { SharedModule } from '@shared/shared.module';
 import { AllUsersComponent } from '@modules/users/pages/all-users.component';
 import { IonicModule } from '@ionic/angular';
 import { UserService } from '@modules/users/services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { HeaderModule } from '@modules/header/header.module';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    SharedModule,
+    HeaderModule,
     UserRoutingModule,
     IonicModule,
     HttpClientModule,

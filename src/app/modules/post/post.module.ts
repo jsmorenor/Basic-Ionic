@@ -1,25 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { PostRoutingModule } from './post-routing.module';
-import { PostService } from '@modules/post/services/post.service';
-import { PostComponent } from '@modules/post/pages/post.component';
-import { SharedModule } from '@shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
 
+import { PostComponent } from '@modules/post/pages/post.component';
+
+import { PostService } from '@modules/post/services/post.service';
+import { HeaderModule } from '@modules/header/header.module';
 
 @NgModule({
-  declarations: [PostComponent],
+  declarations: [ PostComponent ],
   imports: [
     CommonModule,
     PostRoutingModule,
-    SharedModule,
+    HeaderModule,
     HttpClientModule,
     RouterModule,
     IonicModule,
   ],
-  providers: [PostService]
+  providers: [ PostService ],
 })
-export class PostModule { }
+export class PostModule {}

@@ -3,23 +3,23 @@ import { CommonModule } from '@angular/common';
 
 import { AlbumRoutingModule } from './album-routing.module';
 import { AlbumComponent } from '@modules/albums/pages/album.component';
-import { SharedModule } from '@shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { AlbumService } from '@modules/albums/services/album.service';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
+import { HeaderModule } from '@modules/header/header.module';
 
 
 @NgModule({
-  declarations: [AlbumComponent],
+  declarations: [ AlbumComponent ],
   imports: [
     CommonModule,
     AlbumRoutingModule,
-    SharedModule,
+    HeaderModule,
     RouterModule,
     HttpClientModule,
     IonicModule,
   ],
-  providers: [AlbumService]
+  providers: [ AlbumService ],
 })
-export class AlbumModule { }
+export class AlbumModule {}
