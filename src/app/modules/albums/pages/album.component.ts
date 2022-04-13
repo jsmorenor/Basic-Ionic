@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlbumService } from '@modules/albums/services/album.service';
 import { Observable } from 'rxjs';
 import { User } from '@core/models/user';
+import { Album } from '@core/models/album';
 
 @Component({
   selector: 'app-album',
@@ -10,7 +11,7 @@ import { User } from '@core/models/user';
   styleUrls: [ './album.component.scss' ],
 })
 export class AlbumComponent implements OnInit {
-  public albums$!: Observable<any>;
+  public albums$!: Observable<Album[]>;
   public username!: User;
   public errorMessage?: string;
   public isUserFound = false;

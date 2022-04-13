@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class CommentComponent implements OnInit {
   public currentPostId!: string | number;
-  public comments$!: Observable<any>;
+  public comments$!: Observable<Comment[]>;
 
   constructor(private router: ActivatedRoute, private commentService: CommentService) { }
 

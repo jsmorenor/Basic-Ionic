@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '@modules/post/services/post.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Post } from '@core/models/post';
 
 @Component({
   selector: 'app-post',
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: [ './post.component.scss' ],
 })
 export class PostComponent implements OnInit {
-  public post$?: Observable<any>;
+  public post$?: Observable<Post[]>;
   public userId!: string | number;
 
   constructor(private postService: PostService, private activatedRoute: ActivatedRoute, private router: Router) { }
