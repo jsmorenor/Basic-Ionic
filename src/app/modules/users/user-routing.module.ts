@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: '', component: AllUsersComponent },
   { path: 'users/:id', children: [
       { path: 'albums', loadChildren: () => import('@modules/albums/album.module').then((m) => m.AlbumModule ) },
-      { path: 'post', loadChildren: () => import('@modules/albums/album.module').then((m) => m.AlbumModule ) },
+      { path: 'post', loadChildren: () => import('@modules/post/post.module').then((m) => m.PostModule ) },
     ] },
 ];
 

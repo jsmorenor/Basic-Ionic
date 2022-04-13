@@ -1,0 +1,17 @@
+<app-header title="Some Name" ></app-header >
+
+<ion-content >
+  <ion-list >
+    <ion-list-header >
+      <ion-label ><h2 >Publicaciones de {{'Some Name'}}</h2 ></ion-label >
+    </ion-list-header >
+    <ion-item-group >
+      <ion-item *ngFor="let post of post$ | async" >
+        <ion-label >
+          <h3 >{{post.title}}</h3 >
+          <p >{{post.body}}</p >
+        </ion-label >
+      </ion-item >
+    </ion-item-group >
+  </ion-list >
+</ion-content >
