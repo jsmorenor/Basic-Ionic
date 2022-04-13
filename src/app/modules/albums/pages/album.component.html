@@ -4,10 +4,10 @@
     <ion-grid >
       <ion-row >
         <ion-col >
-          <ion-button class="expand" >Álbumes</ion-button >
+          <ion-button (click)="changePage('albums')" class="expand" >Álbumes</ion-button >
         </ion-col >
         <ion-col >
-          <ion-button color="light" class="expand" >Publicaciones</ion-button >
+          <ion-button (click)="changePage('post')" color="light" class="expand" >Publicaciones</ion-button >
         </ion-col >
       </ion-row >
     </ion-grid >
