@@ -12,7 +12,8 @@ export class CameraComponent implements OnInit {
 
   constructor(private photoService: PhotoService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.photoService.loadSaved();
     this.photos = this.photoService.photos;
   }
 
