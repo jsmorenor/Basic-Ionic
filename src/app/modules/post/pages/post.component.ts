@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '@modules/post/services/post.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Post } from '@core/models/post';
+import { User } from '@core/models/user';
+import { OwnerService } from '@shared/services/owner.service';
 
 @Component({
   selector: 'app-post',
@@ -12,16 +14,13 @@ import { Post } from '@core/models/post';
 export class PostComponent implements OnInit {
   public post$?: Observable<Post[]>;
   public userId!: string | number;
+  public userInfo$!: Observable<User | undefined>;
 
-  constructor(private postService: PostService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private postService: PostService, private activatedRoute: ActivatedRoute, private ownerService: OwnerService) { }
 
   ngOnInit() {
     this.userId = this.activatedRoute.snapshot.params['id'];
     this.post$ = this.postService.getPosts(this.userId);
+    this.userInfo$ = this.ownerService.getOwner(this.userId);
   }
-
-  public changePage(page: string): void {
-    this.router.navigate([ '/', 'users', this.userId, page ]).then();
-  }
-
 }

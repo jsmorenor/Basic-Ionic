@@ -10,6 +10,8 @@ import { PostComponent } from '@modules/post/pages/post.component';
 import { PostService } from '@modules/post/services/post.service';
 import { HeaderModule } from '@modules/header/header.module';
 import { PostCardComponent } from '@modules/post/components/post-card/post-card.component';
+import { PageActionsModule } from '@modules/page-actions/page-actions.module';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { PostCardComponent } from '@modules/post/components/post-card/post-card.
     HttpClientModule,
     RouterModule,
     IonicModule,
+    PageActionsModule,
+    SharedModule,
   ],
   providers: [ PostService ],
   exports: [

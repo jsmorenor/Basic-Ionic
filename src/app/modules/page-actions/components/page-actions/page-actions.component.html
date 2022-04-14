@@ -1,0 +1,11 @@
+<ion-toolbar >
+  <ion-grid >
+    <ion-row >
+      <ion-col *ngFor="let page of userPages" >
+        <ion-button (click)="changePage(page.address)"
+                    [color]="page.address !== currentPage ? 'light' : ''"
+                    class="expand" >{{page.name}}</ion-button >
+      </ion-col >
+    </ion-row >
+  </ion-grid >
+</ion-toolbar >

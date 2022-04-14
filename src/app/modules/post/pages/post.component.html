@@ -1,21 +1,10 @@
-<app-header title="Some Name" ></app-header >
+<app-header [activateBack]="true" [userId]="userId" ></app-header >
 
-<ion-content >
-  <ion-toolbar >
-    <ion-grid >
-      <ion-row >
-        <ion-col >
-          <ion-button (click)="changePage('albums')" class="expand" color="light" >Álbumes</ion-button >
-        </ion-col >
-        <ion-col >
-          <ion-button (click)="changePage('post')" class="expand" >Publicaciones</ion-button >
-        </ion-col >
-      </ion-row >
-    </ion-grid >
-  </ion-toolbar >
+<ion-content *ngIf="(userInfo$ | async) !== undefined; else loadIcon" >
+  <app-page-actions [userId]="userId" ></app-page-actions >
   <ion-list >
-    <ion-list-header >
-      <ion-label ><h2 >Publicaciones de {{'Some Name'}}</h2 ></ion-label >
+    <ion-list-header color="tertiary" >
+      <ion-label ><h2 >Publicaciones de {{(userInfo$ | async)?.name}}</h2 ></ion-label >
     </ion-list-header >
     <ion-item-group >
       <ion-item *ngFor="let post of post$ | async" >
@@ -30,3 +19,18 @@
     </ion-item-group >
   </ion-list >
 </ion-content >
+
+<ng-template #error >
+  <div class="d-f" >
+    <ion-card *ngIf="(userInfo$ | async) === undefined; else loadIcon" class="bgc-t" >
+      <ion-card-title >"Usuario no encontrado"</ion-card-title >
+    </ion-card >
+  </div >
+</ng-template >
+
+<ng-template #loadIcon >
+  <ion-card class="bgc-t scale-2" >
+    <ion-spinner color="tertiary" ></ion-spinner >
+  </ion-card >
+</ng-template >
+

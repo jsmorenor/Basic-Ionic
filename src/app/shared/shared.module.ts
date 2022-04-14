@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { OwnerService } from '@shared/services/owner.service';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    IonicModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
+  providers: [ OwnerService ],
   exports: [],
 })
 export class SharedModule {}

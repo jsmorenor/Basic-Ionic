@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Pages } from '@core/literals/pages';
 
 @Component({
   selector: 'app-searcher',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class SearcherComponent implements OnInit {
   @Input() canSearch = false;
   public searcher!: FormGroup;
-  public pages = [ { address: 'albums', name: 'Álbumes' }, { address: 'post', name: 'Publicaciones' } ];
+  public pages = Pages.routes;
 
   constructor(private router: Router) { }
 

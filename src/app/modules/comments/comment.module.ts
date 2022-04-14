@@ -11,6 +11,7 @@ import { HeaderModule } from '@modules/header/header.module';
 import { PostModule } from '@modules/post/post.module';
 import { CommentCardComponent } from '@modules/comments/components/comment-card/comment-card.component';
 import { CommentTitleComponent } from '@modules/comments/components/comment-title/comment-title.component';
+import { SharedModule } from '@shared/shared.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { CommentTitleComponent } from '@modules/comments/components/comment-titl
     HttpClientModule,
     RouterModule,
     PostModule,
+    SharedModule,
   ],
   providers: [ CommentService ],
 })

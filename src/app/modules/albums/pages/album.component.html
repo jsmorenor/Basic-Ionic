@@ -1,20 +1,9 @@
-<app-header [title]="isUserFound? username?.username || 'Error': username?.username" ></app-header >
+<app-header [activateBack]="true" [userId]="userId" ></app-header >
 <ion-content >
-  <ion-toolbar >
-    <ion-grid >
-      <ion-row >
-        <ion-col >
-          <ion-button (click)="changePage('albums')" class="expand" >Álbumes</ion-button >
-        </ion-col >
-        <ion-col >
-          <ion-button (click)="changePage('post')" color="light" class="expand" >Publicaciones</ion-button >
-        </ion-col >
-      </ion-row >
-    </ion-grid >
-  </ion-toolbar >
+  <app-page-actions [userId]="userId" ></app-page-actions >
   <ion-list *ngIf="username && isUserFound; else error" >
     <ion-list-header color="tertiary" >
-      <ion-label >Álbumes de {{ username.name }}</ion-label >
+      <ion-label ><h2 >Álbumes de {{ username.name }}</h2 ></ion-label >
     </ion-list-header >
     <ion-item *ngFor="let album of albums$ | async" >
       {{album.title}}

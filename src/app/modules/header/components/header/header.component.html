@@ -1,10 +1,10 @@
 <ion-header [translucent]="true" >
   <ion-toolbar color="primary" >
-    <ion-buttons (click)="goBack()" *ngIf="title" class="selectable" slot="start" >
+    <ion-buttons (click)="goBack()" *ngIf="activateBack" class="selectable" slot="start" >
       <ion-icon name="arrow-back" ></ion-icon >
     </ion-buttons >
     <ion-title >
-      {{title ?? 'Social User'}}
+      {{(userId) ? ((username$ | async)?.username || 'Error') : 'Social User'}}
     </ion-title >
     <ion-buttons class="selectable" slot="end" >
       <ion-icon (click)="alterSearchView()" name="search" ></ion-icon >
