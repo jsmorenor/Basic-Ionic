@@ -1,0 +1,17 @@
+<app-header ></app-header >
+
+<ion-content >
+  <ion-grid >
+    <ion-row >
+      <ion-col *ngFor="let photo of photos; index as position" size="6" >
+        <ion-img [src]="photo.webviewPath" ></ion-img >
+      </ion-col >
+    </ion-row >
+  </ion-grid >
+
+  <ion-fab horizontal="center" slot="fixed" vertical="bottom" >
+    <ion-fab-button (click)="addPhotoToGallery()" >
+      <ion-icon name="camera" ></ion-icon >
+    </ion-fab-button >
+  </ion-fab >
+</ion-content >

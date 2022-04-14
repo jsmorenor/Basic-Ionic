@@ -11,6 +11,10 @@ const routes: Routes = [
         path: 'post',
         loadChildren: () => import('@modules/comments/comment.module').then(module => module.CommentModule),
       },
+      {
+        path: 'camera',
+        loadChildren: () => import('@modules/camera/camera.module').then(module => module.CameraModule),
+      },
     ],
   },
   { path: '**', redirectTo: '/', pathMatch: 'full' },

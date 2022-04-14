@@ -6,6 +6,7 @@ import { SearcherComponent } from '@modules/header/components/searcher/searcher.
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '@shared/shared.module';
 import { OwnerService } from '@shared/services/owner.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { OwnerService } from '@shared/services/owner.service';
     IonicModule,
     ReactiveFormsModule,
     SharedModule,
+    HttpClientModule,
   ],
   providers: [ OwnerService ],
   exports: [
